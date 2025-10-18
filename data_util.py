@@ -14,7 +14,3 @@ def check_budget():
     
     with open('data.json', 'r') as file:
         return json.load(file)
-    for i in range(len((expenses))):
-        
-
-    

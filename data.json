@@ -1,6 +1,13 @@
-[
-    {
-        "category": "Rent",
-        "amount": 1300.0
-    }
-]
+{
+    "expenses": [
+        {
+            "category": "Rent",
+            "amount": 1300.0
+        },
+        {
+            "category": "Food",
+            "amount": 300.0
+        }
+    ],
+    "budget": 100
+}

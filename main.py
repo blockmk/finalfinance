@@ -11,7 +11,8 @@ from PySide6.QtWidgets import QApplication, QWidget, QLabel, QVBoxLayout
 
 expenses = data_util.load_finance()
 
-
+user = expenses[0]
+print(user["amount"])
 
 def main():
     app = QApplication(sys.argv)

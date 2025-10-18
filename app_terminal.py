@@ -3,17 +3,20 @@
 import json
 import sys
 
-import data
+import data_functions
 import data_util
 
 from PySide6.QtWidgets import QApplication, QWidget, QLabel, QVBoxLayout
 
-expenses = data_util.load_finance()
-budget = 3000
-amt_spend = 
+data = data_util.load_finance()
+expenses = data["expenses"]
+budget = data["budget"]
+amt_spend = 0
+
+
 
 def main():
-    for i in range(1):
+    while True:
         print("===Welcome to Final Finance -- the world's leading app for finance!===")
         print("Please make a selection from the following options below:")
         
@@ -21,22 +24,31 @@ def main():
         print("2) Print Expense History")
         print("3) Budget")
         print("4) Quit")
-        choice = int(input())
+        try:
+            choice = int(input())
+        except ValueError:
+            print("Please enter a choice from 1-4.")
+            continue
+
         if choice == 1:
             category = input("Cat: ")
             amount = float(input("Amt: "))
-            data.add_expense(category, amount, expenses)
+            data_functions.add_expense(category, amount, expenses)
+            data_util.write_finance(data)
+
         elif choice == 2:
             print("1) Print Total Expenses")
             for i in range(len((expenses))):
-                data.print_expense(i, expenses)
+                data_functions.print_expense(i, expenses)
+
         elif choice == 3:
             print("==Budget==")
+            data_functions.check_budget(0, budget, expenses)
+            print("$" + str(budget))
 
         elif choice == 4:
-            n = int(input("How much do you want to print of the array: "))
-            for j in range(n):
-                data.print_expense(j-1, expenses)
+            break
+                
 
 
     ##choice = input("Would you like to print the finances: (Y/N)")
