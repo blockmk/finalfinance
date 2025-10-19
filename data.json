@@ -1,13 +1,9 @@
 {
     "expenses": [
         {
-            "category": "Rent",
-            "amount": 1300.0
-        },
-        {
-            "category": "Food",
-            "amount": 300.0
+            "category": "School",
+            "amount": 200.0
         }
     ],
-    "budget": 100
+    "budget": 300
 }
